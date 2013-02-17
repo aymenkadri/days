@@ -129,3 +129,42 @@ header .stuts span {
     -moz-box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
     box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
 }
+
+.right_block {
+    display: block;
+    float: right;
+}
+
+.center_block {
+    display: block;
+    width: auto;
+}
+
+.background.block_5 {
+    height: auto !important;
+    padding-bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: #996699;
+}
+
+.block_5 {
+    height: auto;
+    width: 10%;
+    padding-bottom: 0px;
+}
+
+.background.block_6 {
+    height: auto !important;
+    padding-bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #996666;
+    margin-right: auto;
+}
+
+.block_6 {
+    width: auto;
+    height: auto;
+    padding-bottom: 0px;
+}

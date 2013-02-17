@@ -28,7 +28,7 @@ public class HelloWorldSeleniumIT {
         assertTrue(driver.getPageSource().contains("Hello World!"));
     }
 
-    @Test
+   /* @Test
     public void displaysCustomizedGreetingFromSpringMVC() throws Exception {
         driver.get(baseUrl + "SpringMVC/HelloWorld");
         driver.findElement(By.name("msg")).clear();
@@ -36,7 +36,7 @@ public class HelloWorldSeleniumIT {
         driver.findElement(By.name("msg")).sendKeys(recipient);
         driver.findElement(By.id("Submit")).click();
         assertTrue(driver.getPageSource().contains("Hello Mary!"));
-    }
+    }*/
 
 	@After
 	public void tearDown() throws Exception {

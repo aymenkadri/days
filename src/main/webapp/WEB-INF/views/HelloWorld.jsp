@@ -1,22 +1,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html lang="en" >
-    <head>
-        <meta charset="utf-8" />
-        <title>Google Places API - practice | Script Tutorials</title>
-        <link href="resources/css/main.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
-        <script src="resources/js/script.js"></script>
-    </head>
-    <body>
-        <header>
-            <h2>Google Places API - practice</h2>
-            <a href="https://github.com/aymenkadri/days" class="stuts">Back to code on <span>Github</span></a>
-        </header>
+<head>
+    <meta charset="utf-8" />
+    <title>Google Places API - practice | Script Tutorials</title>
+    <link href="resources/css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script src="resources/js/script.js"></script>
+</head>
+<body>
+<header>
+    <h2>Google Places API - practice</h2>
+    <a href="https://github.com/aymenkadri/days" class="stuts">Back to code on <span>Github</span></a>
+</header>
 
-        <div id="container" class="container">
-            <div id="gmap_canvas"></div>
+<div >
+
+
+    <div class="right_block block_5">
+        <div class="content">
             <div class="actions">
                 <div class="button">
                     <label for="gmap_where">Where:</label>
@@ -53,5 +56,16 @@
                 <div id="button1" class="button" onclick="findPlaces(); return false;">Search for objects</div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <div class="center_block block_6">
+        <div class="content">
+            <div id="gmap_canvas"></div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
 </html>

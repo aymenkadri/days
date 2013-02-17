@@ -2,13 +2,49 @@ var geocoder;
 var map;
 var markers = Array();
 var infos = Array();
+var myLatlng;
 
 function initialize() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError);
+    }else {
+        handleLocationError();
+    }
+}
+
+function handleLocationSuccess(position) {
+    //alert("handleLocationSuccess() : lat= " + position.coords.latitude + ", long= " + position.coords.longitude);
+    myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    //alert("apres affectation location");
+    displayMap();
+}
+
+function handleLocationError(error){
+    //alert("handleLocationError()");
+    switch(error.code){
+        case error.PERMISSION_DENIED:
+        //alert("L'utilisateur n'a pas autorisé l'accès à sa position");
+        break;
+
+        case error.POSITION_UNAVAILABLE:
+        //alert("L'emplacement de l'utilisateur n'a pas pu être déterminé");
+        break;
+
+        case error.TIMEOUT:
+        //alert("Le service n'a pas répondu à temps");
+        break;
+    }
+    myLatlng = new google.maps.LatLng(48.8858567, 2.257859);
+    displayMap();
+}
+
+
+function displayMap() {
     // prepare Geocoder
     geocoder = new google.maps.Geocoder();
 
     // set initial position (New York)
-    var myLatlng = new google.maps.LatLng(40.7143528,-74.0059731);
+   // var myLatlng = new google.maps.LatLng(40.7143528,-74.0059731);
 
     var myOptions = { // default map options
         zoom: 14,
@@ -79,7 +115,7 @@ function findPlaces() {
 
     var lat = document.getElementById('lat').value;
     var lng = document.getElementById('lng').value;
-    var cur_location = new google.maps.LatLng(lat, lng);
+    var cur_location = myLatlng;
 
     // prepare request to Places
     var request = {
